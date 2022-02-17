@@ -18,21 +18,21 @@
         <h1>MONEY MASTER</h1>
     </header>
     <div class="container d-flex">
-        <div class="left-img w-50 d-flex align-items-center">
+        <div class="left-img d-flex align-items-center">
             <img width="500px" src="image/income.jpg" alt="income calculation">
         </div>
         <!-- calculation-section -->
         <div class="calculation-section w-75">
 
-            <div class="calculation bg-secondary ">
-                <h3 class="text-center">INCOME</h3>
+            <div class="calculation bg-secondary">
+
 
                 <div class="income">
                     <h3 class="text-center">Income</h3>
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Default</span>
-                        <input type="number" class="form-control" aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-default">
+                        <span class="input-group-text">Income</span>
+                        <input type="number" id="income" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}">
                     </div>
                 </div>
 
@@ -40,48 +40,50 @@
                 <div class="expense">
                     <h3 class="text-center">Expenses</h3>
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Default</span>
-                        <input type="number" class="form-control" aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-default">
+                        <span class="input-group-text">Food</span>
+                        <input type="number" class="form-control" id="food" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}">
                     </div>
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Default</span>
-                        <input type="number" class="form-control" aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-default">
+                        <span class="input-group-text">Rent</span>
+                        <input type="number" class="form-control" id="rent" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}">
                     </div>
 
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Default</span>
-                        <input type="number" class="form-control" aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-default">
+                        <span class="input-group-text">Clothes</span>
+                        <input type="number" class="form-control" id="clothes" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}">
                     </div>
                     <div class="calculateButton">
                         <div class="d-flex justify-content-center">
-                            <button type="button" class="btn btn-success">Calculate</button>
+                            <button type="button" class="btn btn-success" id="calculate">Calculate</button>
                         </div>
                         <div class="total-expense">
-                        <h2>Total expense:</h2>
-                        <h2>Balance:</h2>
+                            <h2>Total expense:<span id="expense"></span></h2>
+                            <h2>Balance: <span id="balance"></span></h2>
                         </div>
-                        
+
                     </div>
                 </div>
 
                 <div class="saving d-flex mt-5">
                     <div class="input-group mb-3 d-flex justify-content-center align-items-center">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Default</span>
-                        <input type="number" class="form-control" aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-default">
+                        <span class="input-group-text">Save</span>
+                        <input type="number" class="form-control" id="savePercent" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default" min="0" onkeyup="if(this.value<0){this.value= this.value * -1}"> <span class="bg-primary p-2">&#37;</span>
+
                     </div>
+
                     <div class="save-button">
-                        <button type="button" class="btn btn-success">Save</button>
+                        <button type="button" class="btn btn-success" id="save">Save</button>
                     </div>
 
                 </div>
 
                 <div class="saving-remaining">
-                    <h2>Saving Amount:</h2>
-                    <h2>Remaining Amount:</h2>
+                    <h2>Saving Amount: <span id="savingAmount"></span></h2>
+                    <h2>Remaining Amount:<span id="remainingAmount"></span></h2>
                 </div>
 
 
@@ -89,5 +91,5 @@
             </div>
         </div>
     </div>
-
+    <script src="income.js"></script>
 </body>
